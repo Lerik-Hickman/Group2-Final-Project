@@ -11,31 +11,57 @@ This is where all official documentation and code for the final project is kept
 ## K. Solloway TO-DO
  - Currently has no explicit responsibilities
 
-## Story Idea 1
-General premise is a knight going to rescue a princess from a tower
-Current ending ideas:
-Good ending: the knight rescues the princess
-Death ending: the knight dies
-Tragic ending: the princess dies
-Evil ending: the knight chooses to Slay the Princess
-Tresure ending: the knight gets a key and unlocks a chest in the tower
-Redemption ending: The evil wizard who has captured the princess gets redeemed (don't love this idea)
+## Story
+flowchart in text:
+  
+flowchart TD  
+    N1["1. Story Start"]  
+    N2["2. Explore Boblin the Goblin's Hut"]  
+    N3["3. Kill Boblin the Goblin"]  
+    N4["4. Recruit Boblin the Goblin"]  
+    N5["5. Train with the Wizards"]  
+    N6["6. Arrive at the Tower"]  
+    N7["7. Traverse the Stairs and Fight Undead"]  
+    N8["8. Climb the Outside of the Tower"]  
+    N9(["9. Fall Off the Tower"])  
+    N10["10. Arrive at the Top of the Tower"]  
+    N11["11. Fight the Necromancer"]  
+    N12(["12. Die Fighting"])  
+    N13["13. Forget the Princess, Get the Treasure!"]  
+    N14(["14. Rescue the Princess"])  
+    N15(["15. Treasure!"])  
+    N16(["16. No Maidens, No Treasure"])  
 
-Probably construct a simple structure like this:
-node
- |   \
-node node
- |    |   \
-node node node
+    N1 --> N2
+    N1 --> N5
 
-rather than a complex structure like this:
-node
- |   \
-node<->node
- |   /  |  \
-node<->node node
+    N2 --> N3
+    N2 --> N4
 
-for ease of narative construction, though it's fine to change this because the code will work the same regardless
+    N3 --> N6
+    N4 --> N6
+    N5 --> N6
+
+    N6 --> N7
+    N6 --> N8
+
+    N7 --> N12
+    N7 --> N10
+
+    N8 --> N10
+    N8 --> N9
+
+    N10 --> N11
+    N10 --> N13
+
+    N11 --> N12
+    N11 --> N14
+
+    N13 --> N15
+    N13 --> N16
+Flowchart in Image:  
+
+![Alt text](flowchart.png)
 
 ## GDD
 ### HTML:
