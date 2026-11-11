@@ -37,18 +37,18 @@ node<->node node
 
 for ease of narative construction, though it's fine to change this because the code will work the same regardless
 
-##GDD
-###HTML:
+## GDD
+### HTML:
 The HTML document needs to have four major elements to it:
 1. The title of the story
 2. The current node of the story and image content
 3. The inventory display
 4. The buttons
 
-###CSS:
+### CSS:
 The CSS document has no real restrictions beyond making the HTML look good. WE CAN USE AI FOR THIS DOCUMENT ONLY.
 
-###JavaScript:
+### JavaScript:
 There are few general requirements:
 Use document.getElementByIdI() to integrate HTML and JS features
 Use multiple separate functions (this is covered implicitly by separating things into modules, but within each module there are probably multiple functions)
@@ -70,34 +70,34 @@ This would store: all relevant HTML (as individual variables), story objects (st
 This module will need to include a function that gets called which manages special story events (basically, it would handle calling the QTE, delayed effects, and user input functions)
 For simplicity’s sake, I think the delayed event and play a sound requirement belong in this module, that way everything related to those events can be ironed out here
 
-####Saving/Loading: (light)
+#### Saving/Loading: (light)
 This section would be responsible for creating the cookie, formatted using JSON, that would store everything necessary to resume the story in the same place as well as tracking ending completion. This module would also handle loading from the cookie.
 
-####Log: (medium)
+#### Log: (medium)
 A few lines of code that would output whatever is necessary to allow a player to see a history of their game, and handle displaying the log. Optionally can include -- not displaying the log at all times and/or providing a downloadable log file for a user after each run
 
-####Items: (light)
+#### Items: (light)
 Responsible for managing an array that represents an inventory in code, and handles displaying images for each item on the document. Ideally, each item would be a class object with methods for returning the important variables (like name, item type, etc.)
 
-####QTE (Quick Time Event): (medium)
+#### QTE (Quick Time Event): (medium)
 Responsible for the logic of the mandatory quick time event. TL;DR, must use setInterval to force the player to make a decision, or else face a consequence. Logically would also need some sort of visual representation of the time ticking down (easiest would be a numbered timer counter down, fancy would be to make a circle that changes color in proportion to the remaining time). The QTE in the story would be repeated, so make sure this function can be repeated without error.
 
-####Loading bar: (super light)
+#### Loading bar: (super light)
 Tracks the number of story events completed and uses <span> to display a progress bar of how many story nodes have been completed.
 
-####User Input: (medium)
+#### User Input: (medium)
 Creates an input box and validates a user’s input. This would, again, be used repeatedly within a single node, so ensure that that answers can be stored in a semi-permanent way.
 
-####Reset: (WAIT TO END!!! light)
+#### Reset: (WAIT TO END!!! light)
 Handles resetting the story, items, and all event flags to their default values (this can be used to reset the stored inputs from the User Input module)
 
-####Keyboard Listener: (light)
+#### Keyboard Listener: (light)
 Manages logic for listening to key strokes. Specifically, listens for either ‘1’ or ‘2’ when a story choice needs to be made, and both ‘enter’ and ‘space’ for advancing the story when no choice needs to be made. The way this would be checked is with a global Boolean that gets updated in the story module. If you are responsible for this, just check the Boolean and continue on. Whoever is handling the Story module will ensure the Boolean is correct.
 
-####Hover: (medium)
+#### Hover: (medium)
 Responsible for the mouseover and mouseout listener functions so that mousing over things will enlarge them while hovered. You just need one function that will be called by every element that can be hovered.
 
-####Achievement Tracker: (medium)
+#### Achievement Tracker: (medium)
 The achievement tracker would be an object that stored what endings a user has gotten (as a dictionary of Boolean event flags), as well as having methods that are responsible for displaying achievement history and returning the event flags for saving purposes.
 
 
