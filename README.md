@@ -1,8 +1,9 @@
 # Group2-Final-Project
 This is where all official documentation and code for the final project is kept
 ## L. Hickman TO-DO
- - Currently has no explicit responsibilities
- - Primarily will focus on story and JavaScript
+ - [x] Create Story Flowchart
+ - [ ] Create full story text
+ - [ ] Story Module
 
 ## A. Negi TO-DO
  - Currently has no explicit responsibilities
@@ -90,7 +91,7 @@ Not required by the assignment, but something I would like for us to follow:
 To make data accessing and outputting modular, use external files (likely JSON) to store the data and use a loop to populate an array with instances of the objects, dictionaries, etc. This will save a ton of time when it comes to coding. I can give examples and help you out with anything if you are struggling with this.
 
 Modules:
-Story Management:(probably the most complex)
+Story:(probably the most complex)
 Responsible for managing all story elements and adding the necessary images and text to the HTML.
 This would store: all relevant HTML (as individual variables), story objects (stored in an array) that contain story text (as an array of strings to allow for longer sections to split into multiple pages. Updates a bool on if the end of the array has been reached), references to images, and pointers to what story objects can follow the current story object, as well as all of the event flags (in a dictionary where the key is the flag name and the value is the Boolean flag). This module would also likely need to manage displaying the future options for the story. 
 This module will need to include a function that gets called which manages special story events (basically, it would handle calling the QTE, delayed effects, and user input functions)
