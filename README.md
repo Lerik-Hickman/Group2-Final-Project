@@ -3,14 +3,24 @@ This is where all official documentation and code for the final project is kept
 ## L. Hickman TO-DO
  - [x] Create Story Flowchart
  - [ ] Create full story text
- - [ ] Story Module
+ - [ ] Story Module prototype
+ - [ ] Saving/Loading Module
+ - [ ] Reset Module
+ - [ ] Keyboard Listener
+ - [ ] Log logic
+ - [ ] Cooridinate log with someone (to make its dispay toggleable)
 
 ## A. Negi TO-DO
- - Currently has no explicit responsibilities
- - Primarily will focus on HTML/CSS
+ - [ ] Overarching structure of HTML (focusing on divs)
+ - [ ] QTE Module
+ - [ ] Item Tracker Module
+ - [ ] Achievement Tracker Module
 
 ## K. Solloway TO-DO
- - Currently has no explicit responsibilities
+ - [ ] Making pictures and text formated correctly within a div
+ - [ ] Hover Module
+ - [ ] User Input Module
+ - [ ] Progress Bar Module
 
 ## Story
 flowchart in text:
@@ -91,7 +101,7 @@ Not required by the assignment, but something I would like for us to follow:
 To make data accessing and outputting modular, use external files (likely JSON) to store the data and use a loop to populate an array with instances of the objects, dictionaries, etc. This will save a ton of time when it comes to coding. I can give examples and help you out with anything if you are struggling with this.
 
 Modules:
-Story:(probably the most complex)
+#### Story:(probably the most complex)
 Responsible for managing all story elements and adding the necessary images and text to the HTML.
 This would store: all relevant HTML (as individual variables), story objects (stored in an array) that contain story text (as an array of strings to allow for longer sections to split into multiple pages. Updates a bool on if the end of the array has been reached), references to images, and pointers to what story objects can follow the current story object, as well as all of the event flags (in a dictionary where the key is the flag name and the value is the Boolean flag). This module would also likely need to manage displaying the future options for the story. 
 This module will need to include a function that gets called which manages special story events (basically, it would handle calling the QTE, delayed effects, and user input functions)
@@ -107,13 +117,13 @@ A few lines of code that would output whatever is necessary to allow a player to
 Responsible for managing an array that represents an inventory in code, and handles displaying images for each item on the document. Ideally, each item would be a class object with methods for returning the important variables (like name, item type, etc.)
 
 #### QTE (Quick Time Event): (medium)
-Responsible for the logic of the mandatory quick time event. TL;DR, must use setInterval to force the player to make a decision, or else face a consequence. Logically would also need some sort of visual representation of the time ticking down (easiest would be a numbered timer counter down, fancy would be to make a circle that changes color in proportion to the remaining time). The QTE in the story would be repeated, so make sure this function can be repeated without error.
+Responsible for the logic of the mandatory quick time event. TL;DR, must use setInterval to force the player to make a decision, or else face a consequence. Logically would also need some sort of visual representation of the time ticking down (easiest would be a numbered timer counter down, fancy would be to make a circle that changes color in proportion to the remaining time). 
 
-#### Loading bar: (super light)
+#### Progress bar: (super light)
 Tracks the number of story events completed and uses <span> to display a progress bar of how many story nodes have been completed.
 
-#### User Input: (medium)
-Creates an input box and validates a user’s input. This would, again, be used repeatedly within a single node, so ensure that that answers can be stored in a semi-permanent way.
+#### User Input: (light)
+Creates an input box and validates a user’s input. The user can name the characters (except boblin). Just make a function. Lerik will handle calling it.
 
 #### Reset: (WAIT TO END!!! light)
 Handles resetting the story, items, and all event flags to their default values (this can be used to reset the stored inputs from the User Input module)
