@@ -31,17 +31,19 @@ flowchart TD
     N3["3. Kill Boblin the Goblin"]  
     N4["4. Recruit Boblin the Goblin"]  
     N5["5. Train with the Wizards"]  
-    N6["6. Arrive at the Tower"]  
-    N7["7. Traverse the Stairs and Fight Undead"]  
-    N8["8. Climb the Outside of the Tower"]  
-    N9(["9. Fall Off the Tower"])  
-    N10["10. Arrive at the Top of the Tower"]  
-    N11["11. Fight the Necromancer"]  
-    N12(["12. Die Fighting"])  
-    N13["13. Forget the Princess, Get the Treasure!"]  
-    N14(["14. Rescue the Princess"])  
-    N15(["15. Treasure!"])  
-    N16(["16. No Maidens, No Treasure"])  
+    N6["6. Get Flying Potion"]  
+    N7["7. Get Dexterity Potion"]  
+    N8["8. Arrive at the Tower"]  
+    N9["9. Traverse the Stairs and Fight Undead"]  
+    N10["10. Climb the Outside of the Tower"]  
+    N11(["11. Fall Off the Tower"])  
+    N12["12. Arrive at the Top of the Tower"]  
+    N13["13. Fight the Necromancer"]  
+    N14(["14. Die Fighting"])  
+    N15["15. Forget the Princess, Get the Treasure!"]  
+    N16(["16. Rescue the Princess"])  
+    N17(["17. Treasure!"])  
+    N18(["18. No Maidens, No Treasure"])  
 
     N1 --> N2
     N1 --> N5
@@ -49,30 +51,37 @@ flowchart TD
     N2 --> N3
     N2 --> N4
 
-    N3 --> N6
-    N4 --> N6
+    N3 --> N8
+    N4 --> N8
+
     N5 --> N6
+    N5 --> N7
 
-    N6 --> N7
     N6 --> N8
+    N7 --> N8
 
-    N7 --> N12
-    N7 --> N10
-
-    N8 --> N10
     N8 --> N9
+    N8 --> N10
 
+    N9 --> N14
+    N9 --> N12
+
+    N10 --> N12
     N10 --> N11
-    N10 --> N13
 
-    N11 --> N12
-    N11 --> N14
+    N12 --> N13
+    N12 --> N15
 
-    N13 --> N15
+    N13 --> N14
     N13 --> N16
+
+    N15 --> N17
+    N15 --> N18  
+      
+
 Flowchart in Image:  
 
-![Alt text](flowchart.png)
+![Alt text](updated_flowchart.png)
 
 ## GDD
 ### HTML:
