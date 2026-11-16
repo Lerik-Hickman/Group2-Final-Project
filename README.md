@@ -3,7 +3,7 @@ This is where all official documentation and code for the final project is kept
 ## L. Hickman TO-DO
  - [x] Create Story Flowchart
  - [ ] Create full story text
- - [ ] Story Module prototype
+ - [x] Story Module prototype
  - [ ] Saving/Loading Module
  - [ ] Reset Module
  - [ ] Keyboard Listener
