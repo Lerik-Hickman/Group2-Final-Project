@@ -31,6 +31,8 @@ The game follows a knight on a mission to rescue a princess from a tower. Along 
 
 ### How to Play
 
+Players read through the story and choose between different options to decide what happens next. Each decision leads to a different path, and some choices might affect the items they collect or the challenges they face. The goal is to explore the story and reach one of the possible endings.
+
 ### Controls
 
 ## Story
