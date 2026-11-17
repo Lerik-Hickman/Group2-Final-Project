@@ -23,6 +23,14 @@ This is where all official documentation and code for the final project is kept
  - [ ] User Input Module
  - [ ] Progress Bar Module
 
+## Application Overview
+
+### Game Description
+
+### How to Play
+
+### Controls
+
 ## Story
 flowchart in text:
   
