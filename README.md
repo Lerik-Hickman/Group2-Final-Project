@@ -27,6 +27,8 @@ This is where all official documentation and code for the final project is kept
 
 ### Game Description
 
+The game follows a knight on a mission to rescue a princess from a tower. Along the way, players make choices involving a goblin, wizards, and different ways to reach the top of the tower. Each choice affects the story and can lead to different endings, including rescuing the princess or finding treasure.
+
 ### How to Play
 
 ### Controls
