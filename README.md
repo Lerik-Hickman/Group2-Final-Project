@@ -17,10 +17,15 @@ This is where all official documentation and code for the final project is kept
  - [ ] Achievement Tracker Module
 
 ## K. Solloway TO-DO
- - [ ] Making pictures and text formated correctly within a div
+ - [ ] Making pictures and text formatted correctly within a div
  - [ ] Hover Module
  - [ ] User Input Module
  - [ ] Progress Bar Module
+ - [x] An interactive Figma lo-fi prototype was created to help guide the design and development of our branching story game.
+       [View Prototype](https://www.figma.com/proto/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=5-34&t=gJgiWvKBoA760ZvC-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A34)
+       [View Design Mode](https://www.figma.com/design/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=0-1&p=f&t=THFwbAcHwFUC9olr-0)
+ - [ ] Hi-fi Prototype with styling
+       
 
 ## Story
 flowchart in text:
