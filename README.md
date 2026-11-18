@@ -9,6 +9,7 @@ This is where all official documentation and code for the final project is kept
  - [ ] Keyboard Listener
  - [ ] Log logic
  - [ ] Cooridinate log with someone (to make its dispay toggleable)
+ - [ ] Make icons for the items and achievements
 
 ## A. Negi TO-DO
  - [ ] Overarching structure of HTML (focusing on divs) (initial draft committed, needs testing)
