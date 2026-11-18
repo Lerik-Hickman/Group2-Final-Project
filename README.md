@@ -164,4 +164,5 @@ Responsible for the mouseover and mouseout listener functions so that mousing ov
 #### Achievement Tracker: (medium)
 The achievement tracker would be an object that stored what endings a user has gotten (as a dictionary of Boolean event flags), as well as having methods that are responsible for displaying achievement history and returning the event flags for saving purposes.
 
-
+#### Alerts:
+The alerts section would be a small box on the HTML that would store alerts like the QTE, getting items, and "you died" type of messages, along with the log and the main story information

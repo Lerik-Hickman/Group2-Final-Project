@@ -119,7 +119,7 @@ get_image() Returns the string of the location fo the achievement
 complete() Adds achievement to HMTL, sets is_completed to true,
     and add to completed_achievements
 */
-class item
+class achievements
 {
     constructor(name, image)
     {
