@@ -11,10 +11,11 @@ This is where all official documentation and code for the final project is kept
  - [ ] Cooridinate log with someone (to make its dispay toggleable)
 
 ## A. Negi TO-DO
- - [ ] Overarching structure of HTML (focusing on divs)
+ - [ ] Overarching structure of HTML (focusing on divs) (initial draft committed, needs testing)
  - [ ] QTE Module
  - [ ] Item Tracker Module
  - [ ] Achievement Tracker Module
+ - [x] History log styling (initial CSS completed; needs testing and integration with Lerik's log functionality)
 
 ## K. Solloway TO-DO
  - [ ] Making pictures and text formatted correctly within a div
@@ -26,6 +27,18 @@ This is where all official documentation and code for the final project is kept
        [View Design Mode](https://www.figma.com/design/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=0-1&p=f&t=THFwbAcHwFUC9olr-0)
  - [ ] Hi-fi Prototype with styling
        
+
+## Application Overview
+
+### Game Description
+
+The game follows a knight on a mission to rescue a princess from a tower. Along the way, players make choices involving a goblin, wizards, and different ways to reach the top of the tower. Each choice affects the story and can lead to different endings, including rescuing the princess or finding treasure.
+
+### How to Play
+
+Players read through the story and choose between different options to decide what happens next. Each decision leads to a different path, and some choices might affect the items they collect or the challenges they face. The goal is to explore the story and reach one of the possible endings.
+
+### Controls
 
 ## Story
 flowchart in text:

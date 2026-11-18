@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Group 2 Interactive Story</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Game Title -->
+    <header>
+        <h1>Story Title</h1>
+    </header>
+
+    <!-- Main Game Layout -->
+    <main id="game-container">
+
+        <!-- Left Side: History Log -->
+        <aside id="history-panel">
+
+            <h2>History</h2>
+
+            <button id="toggle-history" type="button">
+                Toggle History
+            </button>
+
+            <div id="history-log">
+                <!-- Story history appears here -->
+            </div>
+
+        </aside>
+
+        <!-- Center: Story Content -->
+        <section id="story-panel">
+
+            <!-- Story Image -->
+            <div id="image-container">
+
+                <img
+                    id="story-image"
+                    src="images/story-placeholder.png"
+                    alt="Current story scene"
+                >
+
+            </div>
+
+            <!-- Story Text -->
+            <div id="story-text">
+
+                <p id="paragraph1"></p>
+
+                <p id="paragraph2"></p>
+
+                <p id="paragraph3"></p>
+
+            </div>
+
+            <!-- Quick Time Event -->
+            <div id="qte-container" hidden>
+
+                <p>Time Remaining:</p>
+
+                <span id="qte-timer">0</span>
+
+            </div>
+
+            <!-- Story Choices -->
+            <div id="choices">
+
+                <button id="choice-one" type="button">
+                    Option 1
+                </button>
+
+                <button id="choice-two" type="button">
+                    Option 2
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Right Side: Inventory and Achievements -->
+        <aside id="right-sidebar">
+
+            <!-- Inventory -->
+            <section id="inventory-panel">
+
+                <h2>Inventory</h2>
+
+                <div id="inventory-list">
+                    <!-- Collected items appear here -->
+                </div>
+
+            </section>
+
+            <!-- Achievements -->
+            <section id="achievements-panel">
+
+                <h2>Achievements</h2>
+
+                <div id="achievement-list">
+                    <!-- Unlocked achievements appear here -->
+                </div>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+</body>
+</html>
