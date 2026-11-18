@@ -129,4 +129,10 @@ class item
     }
 }
 
+// Log Module: Adds content to history log
+update_log(content)
+{
+    // Add content to log
+}
+
 main()
