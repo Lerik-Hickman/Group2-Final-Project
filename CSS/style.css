@@ -62,3 +62,105 @@
 #history-panel.is-collapsed #history-log {
     display: none;
 }
+
+
+/* BASIC PAGE LAYOUT - ASHIKA */
+
+/* Overall page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Three-column layout */
+#game-container {
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr) 215px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    align-items: start;
+}
+
+/* History log positioning */
+#history-panel {
+    min-height: 500px;
+}
+
+/* Center story section */
+#story-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+#image-container {
+    width: 100%;
+    min-height: 300px;
+    background-color: #ddd;
+}
+
+#story-image {
+    display: block;
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
+
+#story-text {
+    min-height: 60px;
+}
+
+/* Choice buttons */
+#choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#choices button {
+    width: 100%;
+    min-height: 130px;
+    cursor: pointer;
+}
+
+/* Right sidebar */
+#right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#inventory-panel,
+#achievements-panel {
+    padding: 15px;
+    background-color: #eee;
+    min-height: 130px;
+}
+
+/* Smaller screens */
+@media (max-width: 850px) {
+    #game-container {
+        grid-template-columns: 1fr;
+    }
+
+    #story-panel {
+        order: 1;
+    }
+
+    #history-panel {
+        order: 2;
+        min-height: 200px;
+    }
+
+    #right-sidebar {
+        order: 3;
+    }
+}
