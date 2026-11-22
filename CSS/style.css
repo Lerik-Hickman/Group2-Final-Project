@@ -62,3 +62,175 @@
 #history-panel.is-collapsed #history-log {
     display: none;
 }
+
+
+/* ===================================
+   BASIC PAGE LAYOUT - ASHIKA
+   =================================== */
+
+/* Overall page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Three-column layout */
+#game-container {
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr) 215px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    align-items: start;
+}
+
+/* History log positioning */
+#history-panel {
+    min-height: 500px;
+}
+
+/* Center story section */
+#story-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+#image-container {
+    width: 100%;
+    min-height: 300px;
+    background-color: #ddd;
+}
+
+#story-image {
+    display: block;
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+}
+
+#story-text {
+    min-height: 60px;
+}
+
+/* Choice buttons */
+#choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#choices button {
+    width: 100%;
+    min-height: 130px;
+    cursor: pointer;
+}
+
+/* Right sidebar */
+#right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#inventory-panel,
+#achievements-panel,
+#alerts-panel {
+    padding: 15px;
+    background-color: #eee;
+    min-height: 130px;
+}
+
+/* Smaller screens */
+@media (max-width: 850px) {
+    #game-container {
+        grid-template-columns: 1fr;
+    }
+
+    #story-panel {
+        order: 1;
+    }
+
+    #history-panel {
+        order: 2;
+        min-height: 200px;
+    }
+
+    #right-sidebar {
+        order: 3;
+    }
+}
+
+
+/* ===================================
+   QTE POPUP STYLING - ASHIKA
+   =================================== */
+
+/* Hide QTE when inactive */
+#qte-container[hidden] {
+    display: none;
+}
+
+/* Show QTE as an overlay */
+#qte-container:not([hidden]) {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    background-color: #ffffff;
+    border: 2px solid #344563;
+    border-radius: 8px;
+    padding: 20px 35px;
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* QTE countdown timer */
+#qte-timer {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #a52a2a;
+    margin-top: 10px;
+}
+
+
+/* ===================================
+   HISTORY OVERLAY STYLING - ASHIKA
+   =================================== */
+
+/* Let the history panel shrink when collapsed */
+#history-panel.is-collapsed {
+    min-height: 0;
+}
+
+/* Floating history panel */
+#history-panel.is-overlay {
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    z-index: 900;
+
+    width: 300px;
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* History button keyboard focus */
+#toggle-history:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
