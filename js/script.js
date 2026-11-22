@@ -153,6 +153,8 @@ const nameError = document.getElementById("name-error");
 beginButton.addEventListener("click", function() {
     // Get the name entered by the player
     characterName = nameInput.value.trim();
+    // Require at least one letter or number in the character name
+    const namePattern = /[a-zA-Z0-9]/;
 
     // Check whether the name is empty
     if (characterName === "") {
@@ -160,6 +162,12 @@ beginButton.addEventListener("click", function() {
         return;
     }
 
+    // Check that the name contains at least one letter or number
+    if (!namePattern.test(characterName)) {
+        nameError.textContent = "Your name must contain at least one letter or number.";
+        return;
+    }
+    
     // Clear any previous error message
     nameError.textContent = "";
 
