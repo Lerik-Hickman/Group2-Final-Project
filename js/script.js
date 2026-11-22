@@ -13,6 +13,9 @@ const TOTAL_ACHIEVEMENTS = 5;
 var inventory = [];
 var completed_acheivements = [];
 
+// User Input Module - Kristina
+let characterName = "";
+
 
 // This function is called once the file loads. Anything that needs
 //     to run before the user interacts with the site gets put here
@@ -130,9 +133,40 @@ class achievements
 }
 
 // Log Module: Adds content to history log
-update_log(content)
+function update_log(content)
 {
     // Add content to log
 }
+
+
+// ===================================
+// USER INPUT MODULE - KRISTINA
+// ===================================
+
+// Get references to the HTML elements
+const nameInput = document.getElementById("character-name");
+const beginButton = document.getElementById("begin-adventure");
+const welcomeOverlay = document.getElementById("welcome-overlay");
+const nameError = document.getElementById("name-error");
+
+// Listen for the player to click Begin Adventure
+beginButton.addEventListener("click", function() {
+    // Get the name entered by the player
+    characterName = nameInput.value.trim();
+
+    // Check whether the name is empty
+    if (characterName === "") {
+        nameError.textContent = "Please enter a character name.";
+        return;
+    }
+
+    // Clear any previous error message
+    nameError.textContent = "";
+
+    console.log("Welcome, " + characterName + "!");
+
+    // Hide the welcome overlay after successful validation
+    welcomeOverlay.style.display = "none";
+});
 
 main()

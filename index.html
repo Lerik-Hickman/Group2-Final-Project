@@ -13,6 +13,24 @@
 
 <body>
 
+    <!-- USER INPUT-->
+    <div id="welcome-overlay">
+        <h2>Welcome, Adventurer!</h2>
+
+        <p>Enter your character's name to begin.</p>
+
+        <label for="character-name">Character Name:</label>
+
+        <input type="text" id="character-name" maxlength="20" autocomplete="off">
+
+        <p id="name-error" role="alert"></p>
+
+        <button id="begin-adventure" type="button">Begin Adventure</button>
+    </div>
+    <!-- END USER INPUT-->
+
+    </div>
+
     <!-- Game Title -->
     <header>
         <h1>Story Title</h1>
@@ -42,11 +60,7 @@
             <!-- Story Image -->
             <div id="image-container">
 
-                <img
-                    id="story-image"
-                    src="images/story-placeholder.png"
-                    alt="Current story scene"
-                >
+                <img id="story-image" src="images/story-placeholder.png" alt="Current story scene">
 
             </div>
 
@@ -115,4 +129,5 @@
     </main>
 
 </body>
+
 </html>
