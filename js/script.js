@@ -169,4 +169,11 @@ beginButton.addEventListener("click", function() {
     welcomeOverlay.style.display = "none";
 });
 
+// Allow the player to press Enter to begin
+nameInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        beginButton.click();
+    }
+});
+
 main()
