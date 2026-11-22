@@ -12,11 +12,13 @@ This is where all official documentation and code for the final project is kept
  - [ ] Make icons for the items and achievements
 
 ## A. Negi TO-DO
- - [ ] Overarching structure of HTML (focusing on divs) (initial draft committed, needs testing)
- - [ ] QTE Module
- - [ ] Item Tracker Module
- - [ ] Achievement Tracker Module
- - [x] History log styling (initial CSS completed; needs testing and integration with Lerik's log functionality)
+
+- [x] Overarching structure of HTML (layout created and tested on desktop and mobile)
+- [ ] QTE Module (HTML and CSS ready, JavaScript still needed)
+- [ ] Item Tracker Module
+- [ ] Achievement Tracker Module
+- [x] History log styling (CSS completed, JavaScript integration still needed)
+- [x] Alerts section (HTML and CSS done, notifications still need JavaScript)
 
 ## K. Solloway TO-DO
  - [ ] Making pictures and text formatted correctly within a div
