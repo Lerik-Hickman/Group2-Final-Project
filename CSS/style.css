@@ -115,3 +115,27 @@ body:has(#welcome-overlay:not([style*="display: none"]))::before {
     padding: 12px 24px;
     cursor: pointer;
 }
+
+
+/* ===================================
+   STORY PROGRESS BAR - KRISTINA
+   =================================== */
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+}
+
+#story-progress {
+    flex: 1;
+    height: 16px;
+    accent-color: #946B12;
+}
+
+#progress-percentage {
+    font-weight: bold;
+    min-width: 40px;
+}
+/* END STORY PROGRESS BAR */

@@ -167,7 +167,7 @@ beginButton.addEventListener("click", function() {
         nameError.textContent = "Your name must contain at least one letter or number.";
         return;
     }
-    
+
     // Clear any previous error message
     nameError.textContent = "";
 
@@ -183,5 +183,30 @@ nameInput.addEventListener("keydown", function(event) {
         beginButton.click();
     }
 });
+
+// ===================================
+// PROGRESS BAR MODULE - KRISTINA
+// ===================================
+
+// Get references to the HTML elements
+const progressBar = document.getElementById("story-progress");
+const progressPercentage = document.getElementById("progress-percentage");
+
+// Track the player's progress
+let storyProgress = 0;
+
+// Update the progress bar and percentage
+function updateProgress() {
+    progressBar.value = storyProgress;
+    progressPercentage.textContent = storyProgress + "%";
+}
+
+// Advance the player's progress by one stage
+function advanceProgress() {
+    storyProgress = Math.min(storyProgress + 25, 100);
+    updateProgress();
+}
+
+
 
 main()
