@@ -10,7 +10,7 @@ Players embark on a quest to rescue a princess from a powerful Necromancer. Alon
 The game features 18 story nodes with multiple branching paths and endings. Each decision can lead to a different experience, encouraging players to replay the adventure and explore alternative outcomes.
 
 <details>
-<summary>## Gameplay and Navigation</summary>
+<summary><strong>Gameplay and Navigation</strong></summary>
 - Enter character names to personalize the adventure.
 - Read the story and view accompanying fantasy illustrations.
 - Choose between available actions to determine the next story event.
@@ -29,7 +29,7 @@ The application uses HTML, CSS, and JavaScript to provide interactive storytelli
 - Kristina Solloway - Figma prototype, player input, progress bar, story illustrations, image formatting, hover interactions
 
 <details>
-<summary># Development Progress / To-Do Lists</summary>
+<summary><strong>Development Progress / To-Do Lists</strong></summary>
 This is where all official documentation and code for the final project is kept
 
 ## L. Hickman TO-DO
@@ -81,7 +81,7 @@ Players read through the story and choose between different options to decide wh
 ### Controls
 
 <details>
-<summary>## Story - Flowchart in text:</summary>
+<summary><strong>Story - Flowchart in text:</strong></summary>
 
 flowchart TD  
     N1["1. Story Start"]  
@@ -139,7 +139,7 @@ flowchart TD
 </details>
 
 <details>
-<summary>## Flowchart in Image:</summary>
+<summary><strong>Flowchart in Image:</strong></summary>
 
 ![Alt text](updated_flowchart.png)
 
@@ -148,7 +148,7 @@ flowchart TD
 ## GDD
 
 <details>
-<summary>### HTML:</summary>
+<summary><strong>HTML:</strong></summary>
 The HTML document needs to have four major elements to it:
 1. The title of the story
 2. The current node of the story and image content
@@ -157,12 +157,12 @@ The HTML document needs to have four major elements to it:
 </details>
 
 <details>
-<summary>### CSS:</summary>
+<summary><strong>CSS:</strong></summary>
 The CSS document has no real restrictions beyond making the HTML look good. WE CAN USE AI FOR THIS DOCUMENT ONLY.
 </details>
 
 <details>
-<summary>### JavaScript:</summary>
+<summary><strong>JavaScript:</strong></summary>
 There are few general requirements:
 Use document.getElementByIdI() to integrate HTML and JS features
 Use multiple separate functions (this is covered implicitly by separating things into modules, but within each module there are probably multiple functions)
@@ -179,7 +179,7 @@ To make data accessing and outputting modular, use external files (likely JSON) 
 </details>
 
 <details>
-<summary>### Modules:</summary>
+<summary><strong>Modules:</strong></summary>
 #### Story:(probably the most complex)
 Responsible for managing all story elements and adding the necessary images and text to the HTML.
 This would store: all relevant HTML (as individual variables), story objects (stored in an array) that contain story text (as an array of strings to allow for longer sections to split into multiple pages. Updates a bool on if the end of the array has been reached), references to images, and pointers to what story objects can follow the current story object, as well as all of the event flags (in a dictionary where the key is the flag name and the value is the Boolean flag). This module would also likely need to manage displaying the future options for the story. 
