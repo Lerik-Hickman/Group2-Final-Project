@@ -28,6 +28,19 @@ The application uses HTML, CSS, and JavaScript to provide interactive storytelli
 - Ashika Negi - HTML structure, quick-time events, inventory, achievement tracking, history log
 - Kristina Solloway - Figma prototype, player input, progress bar, story illustrations, image formatting, hover interactions
 
+## Project Management
+
+Our team uses GitHub Projects to track assignment requirements, individual responsibilities, priorities, dependencies, and development progress.
+
+[Access the Group 2 Project Tracker](https://github.com/users/KHSolloway/projects/2/views/7)
+
+The project tracker includes:
+- Master Requirements
+- Individual Team Member Views
+- Team Responsibilities
+
+Team members are responsible for keeping their task statuses, progress notes, and Last Updated dates current.
+
 <details>
 <summary><strong><h2>Development Progress / To-Do Lists</h2></strong></summary>
 This is where all official documentation and code for the final project is kept
