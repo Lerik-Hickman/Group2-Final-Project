@@ -1,35 +1,101 @@
 # Group2-Final-Project
+# Application Overview
+
+## Group 2 Final Project — Interactive Fantasy Adventure
+
+Our project is an interactive, browser-based fantasy adventure where players make decisions that influence the direction and outcome of the story.
+
+Players embark on a quest to rescue a princess from a powerful Necromancer. Along the way, they encounter Boblin the Goblin, train with wizards, obtain magical potions, and navigate a dangerous tower.
+
+The game features 18 story nodes with multiple branching paths and endings. Each decision can lead to a different experience, encouraging players to replay the adventure and explore alternative outcomes.
+
+<details>
+<summary><strong><h2>Gameplay and Navigation</h2></strong></summary>
+- Enter character names to personalize the adventure.
+- Read the story and view accompanying fantasy illustrations.
+- Choose between available actions to determine the next story event.
+- Track adventure progress using a visual progress bar.
+- View collected items, achievements, and story history.
+- Encounter timed decisions that may affect the outcome.
+- Discover multiple endings based on the choices made throughout the adventure.
+</details>
+
+## Game Features
+The application uses HTML, CSS, and JavaScript to provide interactive storytelling, character input validation, branching decisions, dynamic content updates, and progress tracking.
+
+## Team Members and Roles
+- Lerik Hickman - Project Lead, Story flowchart, story logic, saving/loading, reset functionality, keyboard controls
+- Ashika Negi - HTML structure, quick-time events, inventory, achievement tracking, history log
+- Kristina Solloway - Figma prototype, player input, progress bar, story illustrations, image formatting, hover interactions
+
+## Project Management
+
+Our team uses GitHub Projects to track assignment requirements, individual responsibilities, priorities, dependencies, and development progress.
+
+[Access the Group 2 Project Tracker](https://github.com/users/KHSolloway/projects/2/views/7)
+
+The project tracker includes:
+- Master Requirements
+- Individual Team Member Views
+- Team Responsibilities
+
+Team members are responsible for keeping their task statuses, progress notes, and Last Updated dates current.
+
+<details>
+<summary><strong><h2>Development Progress / To-Do Lists</h2></strong></summary>
 This is where all official documentation and code for the final project is kept
+
 ## L. Hickman TO-DO
  - [x] Create Story Flowchart
  - [ ] Create full story text
- - [ ] Story Module prototype
+ - [x] Story Module prototype
  - [ ] Saving/Loading Module
  - [ ] Reset Module
  - [ ] Keyboard Listener
  - [ ] Log logic
  - [ ] Cooridinate log with someone (to make its dispay toggleable)
+ - [ ] Make icons for the items and achievements
 
 ## A. Negi TO-DO
- - [ ] Overarching structure of HTML (focusing on divs)
- - [ ] QTE Module
- - [ ] Item Tracker Module
- - [ ] Achievement Tracker Module
+
+- [x] Overarching structure of HTML (layout created and tested on desktop and mobile)
+- [ ] QTE Module (HTML and CSS ready, JavaScript still needed)
+- [ ] Item Tracker Module
+- [ ] Achievement Tracker Module
+- [x] History log styling (CSS completed, JavaScript integration still needed)
+- [x] Alerts section (HTML and CSS done, notifications still need JavaScript)
 
 ## K. Solloway TO-DO
- - [ ] Making pictures and text formatted correctly within a div
+ - [ ] Create Project Management tool in GitHub - in progress
+ - [ ] text formatted correctly within a div
+ - [x] Generate story board images - 18
+ - [ ] Create overlay images for animation (if time permits)
  - [ ] Hover Module
- - [ ] User Input Module
- - [ ] Progress Bar Module
+ - [x] User Input Module — Initial implementation complete (Main Character Name)
+ - [ ] User Input Module - Add Princess and Wizard Name input.
+ - [ ] Progress Bar Module — Initial implementation complete; story integration pending. Need to add fractional status indicator.
  - [x] An interactive Figma lo-fi prototype was created to help guide the design and development of our branching story game.
        [View Prototype](https://www.figma.com/proto/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=5-34&t=gJgiWvKBoA760ZvC-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A34)
        [View Design Mode](https://www.figma.com/design/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=0-1&p=f&t=THFwbAcHwFUC9olr-0)
  - [ ] Hi-fi Prototype with styling
        
+</details>
 
-## Story
-flowchart in text:
-  
+## Application Overview
+
+### Game Description
+
+The game follows a knight on a mission to rescue a princess from a tower. Along the way, players make choices involving a goblin, wizards, and different ways to reach the top of the tower. Each choice affects the story and can lead to different endings, including rescuing the princess or finding treasure.
+
+### How to Play
+
+Players read through the story and choose between different options to decide what happens next. Each decision leads to a different path, and some choices might affect the items they collect or the challenges they face. The goal is to explore the story and reach one of the possible endings.
+
+### Controls
+
+<details>
+<summary><strong><h2>Story - Flowchart in text:</h2></strong></summary>
+
 flowchart TD  
     N1["1. Story Start"]  
     N2["2. Explore Boblin the Goblin's Hut"]  
@@ -83,23 +149,33 @@ flowchart TD
     N15 --> N17
     N15 --> N18  
       
+</details>
 
-Flowchart in Image:  
+<details>
+<summary><strong><h2>Flowchart in Image:</h2></strong></summary>
 
 ![Alt text](updated_flowchart.png)
 
+</details>
+
 ## GDD
-### HTML:
+
+<details>
+<summary><strong><h2>HTML:</h2></strong></summary>
 The HTML document needs to have four major elements to it:
 1. The title of the story
 2. The current node of the story and image content
 3. The inventory display
 4. The buttons
+</details>
 
-### CSS:
+<details>
+<summary><strong><h2>CSS:</h2></strong></summary>
 The CSS document has no real restrictions beyond making the HTML look good. WE CAN USE AI FOR THIS DOCUMENT ONLY.
+</details>
 
-### JavaScript:
+<details>
+<summary><strong><h2>JavaScript:</h2></strong></summary>
 There are few general requirements:
 Use document.getElementByIdI() to integrate HTML and JS features
 Use multiple separate functions (this is covered implicitly by separating things into modules, but within each module there are probably multiple functions)
@@ -113,8 +189,10 @@ Use conditional logic, loops, and event-listeners
 
 Not required by the assignment, but something I would like for us to follow:
 To make data accessing and outputting modular, use external files (likely JSON) to store the data and use a loop to populate an array with instances of the objects, dictionaries, etc. This will save a ton of time when it comes to coding. I can give examples and help you out with anything if you are struggling with this.
+</details>
 
-Modules:
+<details>
+<summary><strong><h2>Modules:</h2></strong></summary>
 #### Story:(probably the most complex)
 Responsible for managing all story elements and adding the necessary images and text to the HTML.
 This would store: all relevant HTML (as individual variables), story objects (stored in an array) that contain story text (as an array of strings to allow for longer sections to split into multiple pages. Updates a bool on if the end of the array has been reached), references to images, and pointers to what story objects can follow the current story object, as well as all of the event flags (in a dictionary where the key is the flag name and the value is the Boolean flag). This module would also likely need to manage displaying the future options for the story. 
@@ -151,4 +229,6 @@ Responsible for the mouseover and mouseout listener functions so that mousing ov
 #### Achievement Tracker: (medium)
 The achievement tracker would be an object that stored what endings a user has gotten (as a dictionary of Boolean event flags), as well as having methods that are responsible for displaying achievement history and returning the event flags for saving purposes.
 
-
+#### Alerts:
+The alerts section would be a small box on the HTML that would store alerts like the QTE, getting items, and "you died" type of messages, along with the log and the main story information
+</details>
