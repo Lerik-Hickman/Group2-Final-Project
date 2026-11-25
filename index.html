@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,11 +17,16 @@
     <div id="welcome-overlay">
         <h2>Welcome, Adventurer!</h2>
 
-        <p>Enter your character's name to begin.</p>
+        <p>Enter the names of your characters to begin.</p>
 
         <label for="character-name">Character Name:</label>
-
         <input type="text" id="character-name" maxlength="20" autocomplete="off">
+
+        <label for="princess-name">Princess Name:</label>
+        <input type="text" id="princess-name" maxlength="20" autocomplete="off">
+
+        <label for="wizard-name">Wizard Name:</label>
+        <input type="text" id="wizard-name" maxlength="20" autocomplete="off">
 
         <p id="name-error" role="alert"></p>
 
@@ -76,13 +80,17 @@
 
             </div>
 
-        <!-- STORY PROGRESS BAR - KRISTINA -->
-        <div id="progress-container">
-            <label for="story-progress">Adventure Progress</label>
-            <progress id="story-progress" value="0" max="100"></progress>
-            <span id="progress-percentage">0%</span>
-        </div>
-        <!-- END STORY PROGRESS BAR -->
+            <!-- STORY PROGRESS BAR - KRISTINA -->
+            <div id="progress-container">
+                <label for="story-progress">Adventure Progress</label>
+                <progress id="story-progress" value="1" max="7"></progress>
+                <span id="progress-fraction">1/7</span>
+            </div>
+
+            <p id="progress-message"></p>
+
+
+            <!-- END STORY PROGRESS BAR -->
 
             <!-- Quick Time Event -->
             <div id="qte-container" hidden>

@@ -28,6 +28,19 @@ The application uses HTML, CSS, and JavaScript to provide interactive storytelli
 - Ashika Negi - HTML structure, quick-time events, inventory, achievement tracking, history log
 - Kristina Solloway - Figma prototype, player input, progress bar, story illustrations, image formatting, hover interactions
 
+## Project Management
+
+Our team uses GitHub Projects to track assignment requirements, individual responsibilities, priorities, dependencies, and development progress.
+
+[Access the Group 2 Project Tracker](https://github.com/users/KHSolloway/projects/2/views/7)
+
+The project tracker includes:
+- Master Requirements
+- Individual Team Member Views
+- Team Responsibilities
+
+Team members are responsible for keeping their task statuses, progress notes, and Last Updated dates current.
+
 <details>
 <summary><strong><h2>Development Progress / To-Do Lists</h2></strong></summary>
 This is where all official documentation and code for the final project is kept
@@ -59,8 +72,8 @@ This is where all official documentation and code for the final project is kept
  - [ ] Create overlay images for animation (if time permits)
  - [ ] Hover Module
  - [x] User Input Module — Initial implementation complete (Main Character Name)
- - [ ] User Input Module - Add Princess and Wizard Name input.
- - [ ] Progress Bar Module — Initial implementation complete; story integration pending. Need to add fractional status indicator.
+ - [x] User Input Module - Add Princess and Wizard Name input.
+ - [x] Progress Bar Module — Initial fractional status implementation complete; story integration pending.
  - [x] An interactive Figma lo-fi prototype was created to help guide the design and development of our branching story game.
        [View Prototype](https://www.figma.com/proto/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=5-34&t=gJgiWvKBoA760ZvC-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A34)
        [View Design Mode](https://www.figma.com/design/o63kfEyssQ4CYWlmtGU2ka/JavaScript-Final-Project?node-id=0-1&p=f&t=THFwbAcHwFUC9olr-0)

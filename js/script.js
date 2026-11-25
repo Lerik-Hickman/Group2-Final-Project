@@ -15,6 +15,8 @@ var completed_acheivements = [];
 
 // User Input Module - Kristina
 let characterName = "";
+let wizardName = "";
+let princessName = "";
 
 
 // This function is called once the file loads. Anything that needs
@@ -144,7 +146,9 @@ function update_log(content)
 // ===================================
 
 // Get references to the HTML elements
-const nameInput = document.getElementById("character-name");
+const characterNameInput = document.getElementById("character-name");
+const princessNameInput = document.getElementById("princess-name");
+const wizardNameInput = document.getElementById("wizard-name");
 const beginButton = document.getElementById("begin-adventure");
 const welcomeOverlay = document.getElementById("welcome-overlay");
 const nameError = document.getElementById("name-error");
@@ -152,21 +156,41 @@ const nameError = document.getElementById("name-error");
 // Listen for the player to click Begin Adventure
 beginButton.addEventListener("click", function() {
     // Get the name entered by the player
-    characterName = nameInput.value.trim();
-    // Require at least one letter or number in the character name
+    characterName = characterNameInput.value.trim();
+    princessName = princessNameInput.value.trim();
+    wizardName = wizardNameInput.value.trim();
+
+    //Create array for the character names
+    const characterNames = [characterName, princessName, wizardName];
+
+    // Create array for the character roles
+    const characterRoles = ["Adventurer", "Princess", "Wizard"];
+
+     // Require at least one letter or number in the character name (validate before looping through the three names)
     const namePattern = /[a-zA-Z0-9]/;
 
-    // Check whether the name is empty
-    if (characterName === "") {
-        nameError.textContent = "Please enter a character name.";
-        return;
-    }
+    //loop through the array to 
+    for (let i = 0; i < characterNames.length; i++) {
 
-    // Check that the name contains at least one letter or number
-    if (!namePattern.test(characterName)) {
-        nameError.textContent = "Your name must contain at least one letter or number.";
+         // Check whether the name is empty
+        if (characterNames[i] === "") {
+        nameError.textContent = "Please enter a name for the " + characterRoles[i] + ".";
         return;
-    }
+        }
+
+      // Check that the name contains at least one letter or number
+        if (!namePattern.test(characterNames[i])) {
+        nameError.textContent = "The " + characterRoles[i]+"'s name must contain at least one letter or number.";
+        return;
+        }
+
+}
+
+   
+
+   
+
+  
 
     // Clear any previous error message
     nameError.textContent = "";
@@ -178,7 +202,7 @@ beginButton.addEventListener("click", function() {
 });
 
 // Allow the player to press Enter to begin
-nameInput.addEventListener("keydown", function(event) {
+welcomeOverlay.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         beginButton.click();
     }
@@ -190,21 +214,33 @@ nameInput.addEventListener("keydown", function(event) {
 
 // Get references to the HTML elements
 const progressBar = document.getElementById("story-progress");
-const progressPercentage = document.getElementById("progress-percentage");
+const progressFraction = document.getElementById("progress-fraction");
+const progressMessage = document.getElementById("progress-message");
+
 
 // Track the player's progress
-let storyProgress = 0;
+let currentStage = 1;
+const totalStages = 7;
 
 // Update the progress bar and percentage
 function updateProgress() {
-    progressBar.value = storyProgress;
-    progressPercentage.textContent = storyProgress + "%";
+    progressBar.value = currentStage;
+    progressFraction.textContent = currentStage + "/" + totalStages;
+
+     if (currentStage === totalStages) {
+        progressMessage.textContent = characterName + ", your adventure is Complete!";
+
+            } else {
+                progressMessage.textContent = "";
+            }
 }
 
 // Advance the player's progress by one stage
 function advanceProgress() {
-    storyProgress = Math.min(storyProgress + 25, 100);
+    currentStage = Math.min(currentStage + 1, totalStages);
     updateProgress();
+
+   
 }
 
 
