@@ -201,16 +201,80 @@ header {
 }
 
 #image-container {
+    position: relative;
     width: 100%;
-    min-height: 300px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     background-color: #ddd;
 }
 
 #story-image {
     display: block;
     width: 100%;
-    max-height: 350px;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: 25% 50%;
+    animation: hutZoomOut 4s ease-out forwards;
+}
+
+#boblin {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    height: 80%;
+    width: auto;
+    z-index: 2;
+    transform-origin: top left;
+    animation: boblinZoomOut 5s ease-in-out forwards;
+}
+
+@keyframes hutZoomOut {
+    from {
+        transform: scale(1.15);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes boblinZoomOut {
+    from {
+        transform: translate(-85%, -15%) scale(2.8);
+    }
+    to {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+body:has(#welcome-overlay:not([style*="display: none"])) #story-image,
+body:has(#welcome-overlay:not([style*="display: none"])) #boblin, 
+body:has(#welcome-overlay:not([style*="display: none"])) #hut-door {
+    animation-play-state: paused;
+}
+
+#hut-door {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+    pointer-events: none;
+    animation: doorReveal 5s ease-in-out forwards;
+}
+
+@keyframes doorReveal {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-35%);
+    }
 }
 
 #story-text {
