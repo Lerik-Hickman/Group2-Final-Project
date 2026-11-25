@@ -214,21 +214,33 @@ welcomeOverlay.addEventListener("keydown", function(event) {
 
 // Get references to the HTML elements
 const progressBar = document.getElementById("story-progress");
-const progressPercentage = document.getElementById("progress-percentage");
+const progressFraction = document.getElementById("progress-fraction");
+const progressMessage = document.getElementById("progress-message");
+
 
 // Track the player's progress
-let storyProgress = 0;
+let currentStage = 1;
+const totalStages = 7;
 
 // Update the progress bar and percentage
 function updateProgress() {
-    progressBar.value = storyProgress;
-    progressPercentage.textContent = storyProgress + "%";
+    progressBar.value = currentStage;
+    progressFraction.textContent = currentStage + "/" + totalStages;
+
+     if (currentStage === totalStages) {
+        progressMessage.textContent = characterName + ", your adventure is Complete!";
+
+            } else {
+                progressMessage.textContent = "";
+            }
 }
 
 // Advance the player's progress by one stage
 function advanceProgress() {
-    storyProgress = Math.min(storyProgress + 25, 100);
+    currentStage = Math.min(currentStage + 1, totalStages);
     updateProgress();
+
+   
 }
 
 
