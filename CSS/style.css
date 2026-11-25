@@ -93,9 +93,15 @@ body:has(#welcome-overlay:not([style*="display: none"]))::before {
 
     text-align: center;
     z-index: 1000;
+    
 }
 
-#character-name {
+#welcome-overlay label {
+    display: block;
+    text-align: left;
+}
+
+#character-name, #princess-name, #wizard-name {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -104,6 +110,7 @@ body:has(#welcome-overlay:not([style*="display: none"]))::before {
 
     border: 1px solid #999;
     border-radius: 4px;
+    
 }
 
 #name-error {
@@ -138,7 +145,12 @@ body:has(#welcome-overlay:not([style*="display: none"]))::before {
     font-weight: bold;
     min-width: 40px;
 }
+
 /* END STORY PROGRESS BAR */
+
+
+
+/* ===================================
    BASIC PAGE LAYOUT - ASHIKA
    =================================== */
 
