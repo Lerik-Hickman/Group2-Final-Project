@@ -13,6 +13,9 @@ const TOTAL_ACHIEVEMENTS = 5;
 var inventory = [];
 var completed_acheivements = [];
 
+// User Input Module - Kristina
+let characterName = "";
+
 
 // This function is called once the file loads. Anything that needs
 //     to run before the user interacts with the site gets put here
@@ -119,7 +122,7 @@ get_image() Returns the string of the location fo the achievement
 complete() Adds achievement to HMTL, sets is_completed to true,
     and add to completed_achievements
 */
-class item
+class achievements
 {
     constructor(name, image)
     {
@@ -128,5 +131,82 @@ class item
         this.is_equipped = false;
     }
 }
+
+// Log Module: Adds content to history log
+function update_log(content)
+{
+    // Add content to log
+}
+
+
+// ===================================
+// USER INPUT MODULE - KRISTINA
+// ===================================
+
+// Get references to the HTML elements
+const nameInput = document.getElementById("character-name");
+const beginButton = document.getElementById("begin-adventure");
+const welcomeOverlay = document.getElementById("welcome-overlay");
+const nameError = document.getElementById("name-error");
+
+// Listen for the player to click Begin Adventure
+beginButton.addEventListener("click", function() {
+    // Get the name entered by the player
+    characterName = nameInput.value.trim();
+    // Require at least one letter or number in the character name
+    const namePattern = /[a-zA-Z0-9]/;
+
+    // Check whether the name is empty
+    if (characterName === "") {
+        nameError.textContent = "Please enter a character name.";
+        return;
+    }
+
+    // Check that the name contains at least one letter or number
+    if (!namePattern.test(characterName)) {
+        nameError.textContent = "Your name must contain at least one letter or number.";
+        return;
+    }
+
+    // Clear any previous error message
+    nameError.textContent = "";
+
+    console.log("Welcome, " + characterName + "!");
+
+    // Hide the welcome overlay after successful validation
+    welcomeOverlay.style.display = "none";
+});
+
+// Allow the player to press Enter to begin
+nameInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        beginButton.click();
+    }
+});
+
+// ===================================
+// PROGRESS BAR MODULE - KRISTINA
+// ===================================
+
+// Get references to the HTML elements
+const progressBar = document.getElementById("story-progress");
+const progressPercentage = document.getElementById("progress-percentage");
+
+// Track the player's progress
+let storyProgress = 0;
+
+// Update the progress bar and percentage
+function updateProgress() {
+    progressBar.value = storyProgress;
+    progressPercentage.textContent = storyProgress + "%";
+}
+
+// Advance the player's progress by one stage
+function advanceProgress() {
+    storyProgress = Math.min(storyProgress + 25, 100);
+    updateProgress();
+}
+
+
 
 main()
