@@ -1,3 +1,4 @@
+
 /*
 Ashika Negi, Kristina Solloway, Lerik Hickman
 Purpose: Handle all logic to facilitate a visual novel
@@ -85,57 +86,355 @@ function get_nodes()
 
 // Remember delayed event and play a sound here
 
-// Item Module: manages each item
-/*
-Item Class: contains data of itmes
-:Params:
-name: String name of the item
-image: String of location of the small icon for the item
+/* ===================================
+   ITEM MODULE - ASHIKA
+   =================================== */
 
-Methods:
-get_name() Returns name of the item
-get_image() Returns the string of the location fo the image
-add_to_inventory() Adds item to HMTL, sets is_equipped to true, and add
-    to inventory
-remove_from_inventory() Deletes self from HTML
-*/
-class item
-{
-    constructor(name, image)
-    {
+class item {
+    constructor(name, image) {
         this.name = name;
         this.image = image;
         this.is_equipped = false;
+        this.element = null;
+    }
+
+    get_name() {
+        return this.name;
+    }
+
+    get_image() {
+        return this.image;
+    }
+
+    add_to_inventory() {
+        if (inventory.some(existing => existing.name === this.name)) {
+            return false;
+        }
+
+        const list = document.getElementById("inventory-list");
+
+        if (!list) {
+            console.error("Inventory list not found.");
+            return false;
+        }
+
+        const entry = document.createElement("div");
+        entry.className = "inventory-item";
+
+        if (this.image) {
+            const icon = document.createElement("img");
+            icon.src = this.image;
+            icon.alt = "";
+            icon.width = 40;
+            icon.height = 40;
+            entry.appendChild(icon);
+        }
+
+        const label = document.createElement("span");
+        label.textContent = this.name;
+        entry.appendChild(label);
+
+        list.appendChild(entry);
+        inventory.push(this);
+
+        this.element = entry;
+        this.is_equipped = true;
+
+        show_game_alert("Collected: " + this.name);
+        return true;
+    }
+
+    remove_from_inventory() {
+        const index = inventory.indexOf(this);
+
+        if (index === -1) {
+            return false;
+        }
+
+        inventory.splice(index, 1);
+
+        if (this.element) {
+            this.element.remove();
+            this.element = null;
+        }
+
+        this.is_equipped = false;
+        return true;
     }
 }
 
-// Achievement Module: Tracks achievements
-/*
-Item Class: contains data and methods of achievements
-:Params:
-name: String name of the achievement
-image: String of location of the small icon for the achievement
 
-Methods:
-get_name() Returns name of the achievement
-get_image() Returns the string of the location fo the achievement
-complete() Adds achievement to HMTL, sets is_completed to true,
-    and add to completed_achievements
-*/
-class achievements
-{
-    constructor(name, image)
-    {
+/* ===================================
+   ACHIEVEMENT MODULE - ASHIKA
+   =================================== */
+
+class achievements {
+    constructor(name, image) {
         this.name = name;
         this.image = image;
-        this.is_equipped = false;
+        this.is_completed = false;
+        this.element = null;
+    }
+
+    get_name() {
+        return this.name;
+    }
+
+    get_image() {
+        return this.image;
+    }
+
+    complete() {
+        if (this.is_completed) {
+            return false;
+        }
+
+        if (completed_acheivements.some(
+            existing => existing.name === this.name
+        )) {
+            return false;
+        }
+
+        const list = document.getElementById("achievement-list");
+
+        if (!list) {
+            console.error("Achievement list not found.");
+            return false;
+        }
+
+        const entry = document.createElement("div");
+        entry.className = "achievement-item";
+
+        if (this.image) {
+            const icon = document.createElement("img");
+            icon.src = this.image;
+            icon.alt = "";
+            icon.width = 40;
+            icon.height = 40;
+            entry.appendChild(icon);
+        }
+
+        const label = document.createElement("span");
+        label.textContent = this.name;
+        entry.appendChild(label);
+
+        list.appendChild(entry);
+        completed_acheivements.push(this);
+
+        this.element = entry;
+        this.is_completed = true;
+
+        show_game_alert("Achievement unlocked: " + this.name);
+        return true;
     }
 }
+
 
 // Log Module: Adds content to history log
 function update_log(content)
 {
     // Add content to log
+}
+
+
+/* ===================================
+   ALERTS MODULE - ASHIKA
+   =================================== */
+
+function show_game_alert(message) {
+    const list = document.getElementById("alerts-list");
+
+    if (!list) {
+        console.error("Alerts list not found.");
+        return;
+    }
+
+    const alert = document.createElement("p");
+    alert.className = "game-alert";
+    alert.textContent = message;
+
+    list.appendChild(alert);
+
+    // Keep only the five newest alerts.
+    while (list.children.length > 5) {
+        list.firstElementChild.remove();
+    }
+}
+
+
+/* ===================================
+   HISTORY DISPLAY - ASHIKA
+   =================================== */
+
+function add_history_entry(content) {
+    const log = document.getElementById("history-log");
+
+    if (!log) {
+        console.error("History log not found.");
+        return;
+    }
+
+    const entry = document.createElement("p");
+    entry.textContent = content;
+
+    log.appendChild(entry);
+    log.scrollTop = log.scrollHeight;
+}
+
+function toggle_history() {
+    const panel = document.getElementById("history-panel");
+    const button = document.getElementById("toggle-history");
+
+    if (!panel) {
+        return;
+    }
+
+    panel.classList.toggle("is-collapsed");
+
+    if (button) {
+        const expanded = !panel.classList.contains("is-collapsed");
+        button.setAttribute("aria-expanded", String(expanded));
+    }
+}
+
+function set_history_overlay(isOpen) {
+    const panel = document.getElementById("history-panel");
+
+    if (panel) {
+        panel.classList.toggle("is-overlay", Boolean(isOpen));
+    }
+}
+
+
+/* ===================================
+   QTE TIMER MODULE - ASHIKA
+   =================================== */
+
+let qteInterval = null;
+let qteActive = false;
+let qteTimeLeft = 0;
+let qteTimeoutAction = null;
+let qteChoiceAction = null;
+
+// Starts a timed choice event.
+function start_qte(seconds, onTimeout, onChoice) {
+    stop_qte();
+
+    const container = document.getElementById("qte-container");
+    const timer = document.getElementById("qte-timer");
+
+    if (!container || !timer) {
+        console.error("QTE elements not found.");
+        return false;
+    }
+
+    qteTimeLeft = Number.isFinite(Number(seconds))
+        && Number(seconds) > 0
+        ? Math.ceil(Number(seconds))
+        : 10;
+
+    qteTimeoutAction = onTimeout;
+    qteChoiceAction = onChoice;
+    qteActive = true;
+
+    timer.textContent = qteTimeLeft;
+    container.hidden = false;
+
+    qteInterval = setInterval(function() {
+        qteTimeLeft--;
+
+        timer.textContent = qteTimeLeft;
+
+        if (qteTimeLeft <= 0) {
+            const timeoutAction = qteTimeoutAction;
+
+            stop_qte();
+
+            show_game_alert("Time is up!");
+            add_history_entry("The timed choice expired.");
+
+            // Lerik's story logic can provide the consequence.
+            if (typeof timeoutAction === "function") {
+                timeoutAction();
+            }
+        }
+    }, 1000);
+
+    return true;
+}
+
+// Stops the timer and hides the popup.
+function stop_qte() {
+    if (qteInterval !== null) {
+        clearInterval(qteInterval);
+        qteInterval = null;
+    }
+
+    qteActive = false;
+    qteTimeoutAction = null;
+    qteChoiceAction = null;
+
+    const container = document.getElementById("qte-container");
+
+    if (container) {
+        container.hidden = true;
+    }
+}
+
+// Handles a choice made before time runs out.
+function choose_qte(choiceNumber) {
+    if (!qteActive) {
+        return false;
+    }
+
+    const choiceAction = qteChoiceAction;
+
+    stop_qte();
+
+    if (typeof choiceAction === "function") {
+        choiceAction(choiceNumber);
+    }
+
+    return true;
+}
+
+
+/* ===================================
+   EVENT LISTENERS - ASHIKA
+   =================================== */
+
+function initialize_ashika_modules() {
+    const historyButton = document.getElementById("toggle-history");
+    const historyPanel = document.getElementById("history-panel");
+
+    if (historyButton && historyPanel) {
+        historyButton.setAttribute("aria-expanded", "true");
+        historyButton.addEventListener("click", toggle_history);
+    }
+
+    const choiceOne = document.getElementById("choice-one");
+    const choiceTwo = document.getElementById("choice-two");
+
+    if (choiceOne) {
+        choiceOne.addEventListener("click", function() {
+            choose_qte(1);
+        });
+    }
+
+    if (choiceTwo) {
+        choiceTwo.addEventListener("click", function() {
+            choose_qte(2);
+        });
+    }
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener(
+        "DOMContentLoaded",
+        initialize_ashika_modules
+    );
+} else {
+    initialize_ashika_modules();
 }
 
 
@@ -209,4 +508,4 @@ function advanceProgress() {
 
 
 
-main()
+main();
