@@ -46,11 +46,11 @@ This is where all official documentation and code for the final project is kept
 ## A. Negi TO-DO
 
 - [x] Overarching structure of HTML (layout created and tested on desktop and mobile)
-- [ ] QTE Module (HTML and CSS ready, JavaScript still needed)
-- [ ] Item Tracker Module
-- [ ] Achievement Tracker Module
-- [x] History log styling (CSS completed, JavaScript integration still needed)
-- [x] Alerts section (HTML and CSS done, notifications still need JavaScript)
+- [ ] QTE Module (JavaScript written and standalone tests passed, story integration pending)
+- [ ] Item Tracker Module (add and remove functions written, standalone tests passed, story integration pending)
+- [ ] Achievement Tracker Module (unlock function written, standalone tests passed, story integration pending)
+- [x] History log styling (CSS done, history toggle tested, story integration pending)
+- [x] Alerts section (HTML, CSS, and JavaScript tested, story integration pending)
 
 ## K. Solloway TO-DO
  - [ ] Create Project Management tool in GitHub - in progress
