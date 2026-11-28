@@ -1,0 +1,71 @@
+/* ========================================
+   SCENE 2 - BOBLIN'S HUT
+   ======================================== */
+
+/* Animation container */
+#image-container.scene-2 {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+/* Background layer */
+.scene-2 #story-image {
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    transform-origin: 25% 50%;
+    animation: hutZoomOut 4s ease-out forwards;
+}
+
+/* Character layer */
+.scene-2 #boblin {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    height: 80%;
+    width: auto;
+    z-index: 2;
+    transform-origin: top left;
+    animation: boblinZoomOut 5s ease-in-out forwards;
+}
+
+/* Door layer */
+.scene-2 #hut-door {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+    pointer-events: none;
+    animation: doorReveal 5s ease-in-out forwards;
+}
+
+/* Keyframe animations */
+@keyframes hutZoomOut {
+    from {
+        transform: scale(1.15);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes boblinZoomOut {
+    from {
+        transform: translate(-85%, -15%) scale(2.8);
+    }
+    to {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes doorReveal {
+    0%, 15% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-35%);
+    }
+}
